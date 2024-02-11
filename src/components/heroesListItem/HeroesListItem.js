@@ -1,11 +1,10 @@
+// import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { heroesDeleting } from "../../actions";
 import { useHttp } from "../../hooks/http.hook";
 import { heroesDeleted, heroesDeletingError } from "../../actions";
 
 const HeroesListItem = ({ name, description, element, id }) => {
-  const dispatch = useDispatch();
-  const { request } = useHttp();
   let elementClassName;
 
   switch (element) {
@@ -24,6 +23,17 @@ const HeroesListItem = ({ name, description, element, id }) => {
     default:
       elementClassName = "bg-warning bg-gradient";
   }
+
+  const dispatch = useDispatch();
+  const { request } = useHttp();
+
+  // useEffect(() => {
+  //   dispatch(heroesDeleting(id));
+  //   request(`http://localhost:3001/heroes/${id}`, "DELETE")
+  //     .then(() => dispatch(heroesDeleted(id)))
+  //     .catch(() => dispatch(heroesDeletingError(id)));
+  // }, [dispatch, id, request]);
+  // герои не подгружаются изначально
 
   const handleDeleteClick = () => {
     dispatch(heroesDeleting(id));

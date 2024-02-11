@@ -37,3 +37,24 @@ export const heroesDeletingError = (id) => {
     payload: id,
   };
 };
+
+export const heroesCreating = (name) => {
+  return {
+    type: "HEROES_CREATING",
+    payload: name,
+  };
+};
+
+export const heroesCreated = (hero) => {
+  return {
+    type: "HEROES_CREATED",
+    payload: hero,
+  };
+};
+
+export const heroesCreatingError = (name) => {
+  return {
+    type: "HEROES_CREATING_ERROR",
+    payload: name,
+  };
+};

@@ -1,14 +1,32 @@
+import { v4 as uuidv4 } from "uuid";
+
 // Задача для этого компонента:
 // Реализовать создание нового героя с введенными данными. Он должен попадать
-// в общее состояние и отображаться в списке + фильтроваться
-// Уникальный идентификатор персонажа можно сгенерировать через uiid
+// в общее состояние и отображаться в списке ✔️ + фильтроваться
+// Уникальный идентификатор персонажа можно сгенерировать через uiid ✔️
 // Усложненная задача:
-// Персонаж создается и в файле json при помощи метода POST
+// Персонаж создается и в файле json при помощи метода POST ✔️
 // Дополнительно:
 // Элементы <option></option> желательно сформировать на базе
 // данных из фильтров
 
 const HeroesAddForm = () => {
+  const handleInput = (name, description, element) => {
+    const newHero = {
+      name,
+      description,
+      element,
+      id: uuidv4(),
+    };
+    fetch("http://localhost:3001/heroes", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newHero),
+    });
+  };
+
   return (
     <form className="border p-4 shadow-lg rounded">
       <div className="mb-3">
@@ -52,7 +70,17 @@ const HeroesAddForm = () => {
         </select>
       </div>
 
-      <button type="submit" className="btn btn-primary">
+      <button
+        onClick={() =>
+          handleInput(
+            document.getElementById("name").value,
+            document.getElementById("text").value,
+            document.getElementById("element").value
+          )
+        }
+        type="submit"
+        className="btn btn-primary"
+      >
         Создать
       </button>
     </form>

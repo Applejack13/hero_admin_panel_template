@@ -17,6 +17,24 @@
       "name": "Морской герой",
       "description": "Как аквамен, но не из DC",
       "element": "water"
+    },
+    {
+      "id": "1340f44a-dd42-437f-bd8e-25141849061f",
+      "name": "Vadym",
+      "description": "Читаю мысли",
+      "element": "fire"
+    },
+    {
+      "id": "2d88d451-6e11-4a80-88d6-fa4fa4b3540b",
+      "name": "Михаил",
+      "description": "Я летаю",
+      "element": "wind"
+    },
+    {
+      "id": "65828f9b-e1b0-4981-b86a-dffc2cd456f8",
+      "name": "Юлия",
+      "description": "Профессионально глажу котиков",
+      "element": "fire"
     }
   ],
   "filters": ["all", "fire", "water", "wind", "earth"]
