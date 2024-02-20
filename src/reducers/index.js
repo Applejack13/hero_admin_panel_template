@@ -28,14 +28,6 @@ const reducer = (state = initialState, action) => {
         heroesLoadingStatus: "deleting",
         heroes: state.heroes.filter((hero) => hero.id !== action.payload),
       };
-
-    case "HEROES_DELETED":
-      return {
-        ...state,
-        heroesLoadingStatus: "idle",
-        heroes: state.heroes.filter((hero) => hero.id !== action.payload),
-      };
-
     case "HEROES_DELETING_ERROR":
       return {
         ...state,
@@ -58,7 +50,6 @@ const reducer = (state = initialState, action) => {
         ...state,
         heroesLoadingStatus: "idle",
       };
-
     default:
       return state;
   }

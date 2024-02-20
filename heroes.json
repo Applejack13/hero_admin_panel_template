@@ -1,21 +1,9 @@
 {
   "heroes": [
     {
-      "id": 1,
-      "name": "Первый герой",
-      "description": "Первый герой в рейтинге!",
-      "element": "fire"
-    },
-    {
-      "id": 2,
-      "name": "Неизвестный герой",
-      "description": "Скрывающийся в тени",
-      "element": "wind"
-    },
-    {
-      "id": 3,
-      "name": "Морской герой",
-      "description": "Как аквамен, но не из DC",
+      "id": "62191adb-5aea-4111-99c4-26a2aaace688",
+      "name": "sdfbsfmnsdbfmnb",
+      "description": "cnbxcnbmbn",
       "element": "water"
     },
     {
@@ -35,7 +23,19 @@
       "name": "Юлия",
       "description": "Профессионально глажу котиков",
       "element": "fire"
+    },
+    {
+      "id": "3bfa79c8-93a3-489e-a19d-1148cbaab11b",
+      "name": "sdfsdfsdf",
+      "description": "sdfsdfsdfsdfsdfsdf",
+      "element": "water"
     }
   ],
-  "filters": ["all", "fire", "water", "wind", "earth"]
+  "filters": [
+    "all",
+    "fire",
+    "water",
+    "wind",
+    "earth"
+  ]
 }

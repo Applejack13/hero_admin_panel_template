@@ -24,31 +24,10 @@ export const heroesDeleting = (id) => {
   };
 };
 
-export const heroesDeleted = (id) => {
-  return {
-    type: "HEROES_DELETED",
-    payload: id,
-  };
-};
-
 export const heroesDeletingError = (id) => {
   return {
     type: "HEROES_DELETING_ERROR",
     payload: id,
-  };
-};
-
-export const heroesCreating = (name) => {
-  return {
-    type: "HEROES_CREATING",
-    payload: name,
-  };
-};
-
-export const heroesCreated = (hero) => {
-  return {
-    type: "HEROES_CREATED",
-    payload: hero,
   };
 };
 
