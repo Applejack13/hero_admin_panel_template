@@ -11,9 +11,9 @@ import HeroesListItem from "../heroesListItem/HeroesListItem";
 import Spinner from "../spinner/Spinner";
 
 // Задача для этого компонента:
-// При клике на "крестик" идет удаление персонажа из общего состояния
+// При клике на "крестик" идет удаление персонажа из общего состояния ✔️
 // Усложненная задача:
-// Удаление идет и с json файла при помощи метода DELETE
+// Удаление идет и с json файла при помощи метода DELETE ✔️
 
 const HeroesList = () => {
   const { heroes, heroesLoadingStatus } = useSelector((state) => state);
@@ -41,7 +41,7 @@ const HeroesList = () => {
     }
 
     return arr.map(({ id, ...props }) => {
-      return <HeroesListItem key={id} {...props} />;
+      return <HeroesListItem key={id} id={id} {...props} />;
     });
   };
 

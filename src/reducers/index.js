@@ -1,29 +1,58 @@
 const initialState = {
-    heroes: [],
-    heroesLoadingStatus: 'idle',
-    filters: []
-}
+  heroes: [],
+  heroesLoadingStatus: "idle",
+  filters: [],
+};
 
 const reducer = (state = initialState, action) => {
-    switch (action.type) {
-        case 'HEROES_FETCHING':
-            return {
-                ...state,
-                heroesLoadingStatus: 'loading'
-            }
-        case 'HEROES_FETCHED':
-            return {
-                ...state,
-                heroes: action.payload,
-                heroesLoadingStatus: 'idle'
-            }
-        case 'HEROES_FETCHING_ERROR':
-            return {
-                ...state,
-                heroesLoadingStatus: 'error'
-            }
-        default: return state
-    }
-}
+  switch (action.type) {
+    case "HEROES_FETCHING":
+      return {
+        ...state,
+        heroesLoadingStatus: "loading",
+      };
+    case "HEROES_FETCHED":
+      return {
+        ...state,
+        heroes: action.payload,
+        heroesLoadingStatus: "idle",
+      };
+    case "HEROES_FETCHING_ERROR":
+      return {
+        ...state,
+        heroesLoadingStatus: "error",
+      };
+    case "HEROES_DELETING":
+      return {
+        ...state,
+        heroesLoadingStatus: "deleting",
+        heroes: state.heroes.filter((hero) => hero.id !== action.payload),
+      };
+    case "HEROES_DELETING_ERROR":
+      return {
+        ...state,
+        heroesLoadingStatus: "idle",
+      };
+    case "HEROES_CREATING":
+      return {
+        ...state,
+        heroesLoadingStatus: "creating",
+      };
+
+    case "HEROES_CREATED":
+      return {
+        ...state,
+        heroesLoadingStatus: "idle",
+        heroes: [...state.heroes, action.payload],
+      };
+    case "HEROES_CREATING_ERROR":
+      return {
+        ...state,
+        heroesLoadingStatus: "idle",
+      };
+    default:
+      return state;
+  }
+};
 
 export default reducer;
