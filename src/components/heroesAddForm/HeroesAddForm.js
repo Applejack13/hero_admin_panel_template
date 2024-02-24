@@ -1,19 +1,9 @@
-// Задача для этого компонента:
-// Реализовать создание нового героя с введенными данными. Он должен попадать
-// в общее состояние и отображаться в списке + фильтроваться
-// Уникальный идентификатор персонажа можно сгенерировать через uiid
-// Усложненная задача:
-// Персонаж создается и в файле json при помощи метода POST
-// Дополнительно:
-// Элементы <option></option> желательно сформировать на базе
-// данных из фильтров
-
 import { useHttp } from "../../hooks/http.hook";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
 
-import { heroCreated } from "../../actions";
+import { heroCreated } from "../heroesList/heroesSlice";
 
 const HeroesAddForm = () => {
   // Состояния для контроля формы
@@ -21,7 +11,9 @@ const HeroesAddForm = () => {
   const [heroDescr, setHeroDescr] = useState("");
   const [heroElement, setHeroElement] = useState("");
 
-  const { filters, filtersLoadingStatus } = useSelector((state) => state);
+  const { filters, filtersLoadingStatus } = useSelector(
+    (state) => state.filters
+  );
   const dispatch = useDispatch();
   const { request } = useHttp();
 

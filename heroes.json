@@ -1,22 +1,28 @@
 {
   "heroes": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Первый герой",
       "description": "Первый герой в рейтинге!",
       "element": "fire"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Неизвестный герой",
       "description": "Скрывающийся в тени",
       "element": "wind"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Морской герой",
       "description": "Как аквамен, но не из DC",
       "element": "water"
+    },
+    {
+      "id": "c1905572-f525-4bc8-98d1-5c53c75d13fe",
+      "name": "Vadym",
+      "description": "sdfsdf",
+      "element": "fire"
     }
   ],
   "filters": [
