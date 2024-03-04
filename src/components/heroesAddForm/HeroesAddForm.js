@@ -54,58 +54,58 @@ const HeroesAddForm = () => {
   };
 
   return (
-    <form className="border p-4 shadow-lg rounded" onSubmit={onSubmitHandler}>
-      <div className="mb-3">
-        <label htmlFor="name" className="form-label fs-4">
-          Имя нового героя
+    <form className='border p-4 shadow-lg rounded' onSubmit={onSubmitHandler}>
+      <div className='mb-3'>
+        <label htmlFor='name' className='form-label fs-4'>
+          New heroe's name
         </label>
         <input
           required
-          type="text"
-          name="name"
-          className="form-control"
-          id="name"
-          placeholder="Как меня зовут?"
+          type='text'
+          name='name'
+          className='form-control'
+          id='name'
+          placeholder="What's my name?"
           value={heroName}
           onChange={(e) => setHeroName(e.target.value)}
         />
       </div>
 
-      <div className="mb-3">
-        <label htmlFor="text" className="form-label fs-4">
-          Описание
+      <div className='mb-3'>
+        <label htmlFor='text' className='form-label fs-4'>
+          Description
         </label>
         <textarea
           required
-          name="text"
-          className="form-control"
-          id="text"
-          placeholder="Что я умею?"
+          name='text'
+          className='form-control'
+          id='text'
+          placeholder='What can I do?'
           style={{ height: "130px" }}
           value={heroDescr}
           onChange={(e) => setHeroDescr(e.target.value)}
         />
       </div>
 
-      <div className="mb-3">
-        <label htmlFor="element" className="form-label">
-          Выбрать элемент героя
+      <div className='mb-3'>
+        <label htmlFor='element' className='form-label'>
+          Chose heroe's element
         </label>
         <select
           required
-          className="form-select"
-          id="element"
-          name="element"
+          className='form-select'
+          id='element'
+          name='element'
           value={heroElement}
           onChange={(e) => setHeroElement(e.target.value)}
         >
-          <option value="">Я владею элементом...</option>
+          <option value=''>I've an element...</option>
           {renderFilters(filters, filtersLoadingStatus)}
         </select>
       </div>
 
-      <button type="submit" className="btn btn-primary">
-        Создать
+      <button type='submit' className='btn btn-primary'>
+        Create
       </button>
     </form>
   );
